@@ -2,12 +2,20 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { NAVIGATION_ITEMS } from "@/lib/constants";
+import Image from "next/image";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    // Initialize state directly from localStorage/DOM
+    if (typeof window !== "undefined") {
+      return document.documentElement.classList.contains("dark");
+    }
+    return false;
+  });
   const pathname = usePathname();
 
   const isActive = (href: string) => {
@@ -15,6 +23,19 @@ export function Navbar() {
       return pathname === "/";
     }
     return pathname.startsWith(href);
+  };
+
+  const toggleTheme = () => {
+    const html = document.documentElement;
+    if (html.classList.contains("dark")) {
+      html.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDark(false);
+    } else {
+      html.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDark(true);
+    }
   };
 
   return (
@@ -33,7 +54,6 @@ export function Navbar() {
               height={32}
               className="w-8 h-8"
             />
-
             <span className="hidden sm:inline text-foreground">
               AI Community Sri Lanka{" "}
             </span>
@@ -57,6 +77,26 @@ export function Navbar() {
                 )}
               </Link>
             ))}
+          </div>
+
+          {/* Right Actions */}
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={toggleTheme}
+              className="p-2 hover:bg-muted rounded-lg transition-colors cursor-pointer"
+              aria-label="Toggle theme"
+            >
+              {isDark ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden p-2 hover:bg-muted rounded-lg transition-colors cursor-pointer"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </div>
 
