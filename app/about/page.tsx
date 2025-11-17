@@ -1,5 +1,9 @@
+import type { Metadata } from "next";
+import { metadataAbout } from "../../lib/metadata";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+
+export const metadata: Metadata = metadataAbout;
 
 export default function AboutPage() {
   return (

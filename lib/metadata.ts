@@ -49,5 +49,73 @@ export const metadataJoin: Metadata = {
 export const metadataApp: Metadata = {
   title: "AI Community Sri Lanka",
   description:
-    "Join the vibrant AI Community of Sri Lanka. Connect with AI enthusiasts, researchers, developers, and students. Explore events, workshops, and networking opportunities.",
+    "Join thousands of AI enthusiasts, researchers, developers, and students. Explore cutting-edge AI technologies, attend workshops, network with experts, and shape the future of AI in Sri Lanka.",
+  keywords: [
+    "AI",
+    "Community",
+    "Sri Lanka",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Data Science",
+    "Tech Community",
+    "Technology",
+    "Developers",
+  ],
+  authors: [{ name: "AI Community Sri Lanka" }],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://aicommunity.lk",
+    siteName: "AI Community Sri Lanka",
+    title: "AI Community Sri Lanka",
+    description:
+      "Join thousands of AI enthusiasts, researchers, developers, and students. Explore cutting-edge AI technologies, attend workshops, network with experts, and shape the future of AI in Sri Lanka.",
+    images: [
+      {
+        url: "https://github.com/aicommunitysl/.github/raw/main/assets/banner.jpg",
+        width: 1200,
+        height: 630,
+        alt: "AI Community Sri Lanka",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Community Sri Lanka",
+    description:
+      "Join thousands of AI enthusiasts, researchers, developers, and students. Explore cutting-edge AI technologies, attend workshops, network with experts, and shape the future of AI in Sri Lanka.",
+    creator: "@aicommunitysl",
+  },
+  icons: {
+    icon: [
+      {
+        url: "/icon-light-32x32.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icon-dark-32x32.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        url: "/icon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    apple: "/apple-icon.png",
+  },
+  metadataBase: new URL("https://aicommunity.lk"),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://aicommunity.lk",
+  },
 };

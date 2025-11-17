@@ -1,5 +1,9 @@
+import type { Metadata } from "next";
+import { metadataEvents } from "../../lib/metadata";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+
+export const metadata: Metadata = metadataEvents;
 
 export default function EventsPage() {
   return (

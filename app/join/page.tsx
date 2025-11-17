@@ -1,5 +1,9 @@
+import type { Metadata } from "next";
+import { metadataJoin } from "../../lib/metadata";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+
+export const metadata: Metadata = metadataJoin;
 
 export default function JoinPage() {
   return (
