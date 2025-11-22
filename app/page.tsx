@@ -1,8 +1,8 @@
 import { Footer } from "@/components/footer";
-import { HeroSection } from "@/components/home/hero-section";
-import { AboutPreview } from "@/components/home/about-preview";
-import { EventsPreview } from "@/components/home/events-preview";
-import { PartnersSection } from "@/components/home/partners-section";
+import { HomeHero } from "@/components/home/home-hero";
+import { AboutOurCommunity } from "@/components/home/about-our-community";
+import { UpcomingEvents } from "@/components/home/upcoming-events";
+import { OurPartners } from "@/components/home/our-partners";
 import { Navbar } from "@/components/navbar";
 
 export const metadata = {
@@ -14,10 +14,10 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-16">
-        <HeroSection />
-        <AboutPreview />
-        <EventsPreview />
-        <PartnersSection />
+        <HomeHero />
+        <AboutOurCommunity />
+        <UpcomingEvents />
+        <OurPartners />
       </main>
       <Footer />
     </div>

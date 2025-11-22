@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { EVENTS } from "@/lib/constants";
 import Image from "next/image";
 
-export function EventsPreview() {
+export function UpcomingEvents() {
   const upcomingEvents = EVENTS.slice(0, 3);
 
   return (

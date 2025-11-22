@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { HeroVisual } from "./hero-visual";
+import { HomeHeroVisual } from "./home-hero-visual";
 
-export function HeroSection() {
+export function HomeHero() {
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden md:py-24">
       {/* Gradient Background */}
@@ -73,7 +73,7 @@ export function HeroSection() {
           </div>
 
           {/* Right Visual */}
-          <HeroVisual />
+          <HomeHeroVisual />
         </div>
       </div>
     </section>

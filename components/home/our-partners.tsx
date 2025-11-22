@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
-export function PartnersSection() {
+export function OurPartners() {
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-card border-t border-border">
       <div className="max-w-7xl mx-auto space-y-16">

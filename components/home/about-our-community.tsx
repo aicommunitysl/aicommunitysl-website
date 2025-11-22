@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Target, Eye, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function AboutPreview() {
+export function AboutOurCommunity() {
   const features = [
     {
       icon: Target,

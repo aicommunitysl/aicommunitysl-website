@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function HeroVisual() {
+export function HomeHeroVisual() {
   return (
     <div className="relative h-104 md:h-full hidden md:flex items-center justify-center animate-fade-in [animation-delay:0.2s]">
       {/* Abstract Background Glow - Enhanced */}
