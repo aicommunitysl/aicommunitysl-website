@@ -460,3 +460,17 @@ export const EVENTS = [
     ],
   },
 ];
+
+export const PARTNERS = [
+  { name: "Organization 1", logo: "/placeholder.svg" },
+  { name: "Organization 2", logo: "/placeholder.svg" },
+  { name: "Organization 3", logo: "/placeholder.svg" },
+];
+
+export const GLOBAL_AI_INFO = {
+  name: "Global AI Colombo",
+  description:
+    "We are proud to be a chapter of the Global AI Community. As part of this international network, we conduct various events including Global AI Bootcamps each year. Our partnership enables us to bring world-class learning opportunities and connect our local community with the global AI movement.",
+  link: "https://www.globalai.community/",
+  buttonText: "View Chapter",
+};
