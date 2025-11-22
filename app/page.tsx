@@ -1,6 +1,7 @@
 import { Footer } from "@/components/footer";
 import { HeroSection } from "@/components/home/hero-section";
 import { AboutPreview } from "@/components/home/about-preview";
+import { EventsPreview } from "@/components/home/events-preview";
 import { Navbar } from "@/components/navbar";
 
 export const metadata = {
@@ -14,6 +15,7 @@ export default function Home() {
       <main className="pt-16">
         <HeroSection />
         <AboutPreview />
+        <EventsPreview />
       </main>
       <Footer />
     </div>
