@@ -5,6 +5,7 @@ import { AboutHero } from "@/components/about/about-hero";
 import { MissionVisionValues } from "@/components/about/mission-vision-values";
 import { OurStory } from "@/components/about/our-story";
 import { TimelineSection } from "@/components/about/timeline-section";
+import { TeamSection } from "@/components/about/team-section";
 
 export const metadata: Metadata = {
   title: "About Us - AI Community Sri Lanka",
@@ -26,6 +27,7 @@ export default function AboutPage() {
         <MissionVisionValues />
         <OurStory />
         <TimelineSection />
+        <TeamSection />
       </main>
       <Footer />
     </div>

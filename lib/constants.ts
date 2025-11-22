@@ -537,3 +537,42 @@ export const MILESTONES = [
       "Reached 2000+ community members, hosted 50+ events, and became the go-to hub for AI innovation.",
   },
 ];
+
+export const TEAM_MEMBERS = [
+  {
+    id: 1,
+    name: "Team Member One",
+    role: "Community Lead",
+    description: "AI researcher and entrepreneur",
+    image: "/placeholder.svg",
+    linkedin: "https://linkedin.com",
+    speakers: true,
+  },
+  {
+    id: 2,
+    name: "Team Member Two",
+    role: "Events Coordinator",
+    description: "Passionate about community building",
+    image: "/placeholder.svg",
+    linkedin: "https://linkedin.com",
+    speakers: true,
+  },
+  {
+    id: 3,
+    name: "Team Member Three",
+    role: "Technical Lead",
+    description: "Machine Learning Engineer",
+    image: "/placeholder.svg",
+    linkedin: "https://linkedin.com",
+    speakers: true,
+  },
+  {
+    id: 4,
+    name: "Team Member Four",
+    role: "Content Lead",
+    description: "Tech writer and educator",
+    image: "/placeholder.svg",
+    linkedin: "https://linkedin.com",
+    speakers: true,
+  },
+];
