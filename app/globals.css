@@ -153,6 +153,23 @@ html {
   animation: fadeIn 0.6s ease-out;
 }
 
+/* Staggered animation delay helpers used by components */
+.delay-0 {
+  animation-delay: 0s;
+}
+.delay-1 {
+  animation-delay: 0.1s;
+}
+.delay-2 {
+  animation-delay: 0.2s;
+}
+.delay-3 {
+  animation-delay: 0.3s;
+}
+.delay-4 {
+  animation-delay: 0.4s;
+}
+
 /* Scan animation */
 @keyframes scan {
   0% {

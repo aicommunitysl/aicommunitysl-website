@@ -474,3 +474,33 @@ export const GLOBAL_AI_INFO = {
   link: "https://www.globalai.community/",
   buttonText: "View Chapter",
 };
+
+export const MISSION_VISION_VALUES = [
+  {
+    title: "Our Mission",
+    content: [
+      "To empower and connect AI professionals, researchers, students, and enthusiasts in Sri Lanka",
+      "To foster knowledge sharing, collaboration, and innovation in the AI field",
+      "To bridge the gap between academia, industry, and the startup ecosystem",
+      "To make advanced AI education and resources accessible to everyone",
+    ],
+  },
+  {
+    title: "Our Vision",
+    content: [
+      "A thriving AI ecosystem where Sri Lanka becomes a regional hub for AI innovation",
+      "A community where talent is nurtured, ideas are shared, and groundbreaking solutions are created",
+      "An inclusive space where people from all backgrounds can learn, grow, and contribute to the AI revolution",
+      "Sri Lanka recognized globally for its contributions to AI research and development",
+    ],
+  },
+  {
+    title: "Our Values",
+    content: [
+      "Community-driven: We believe in the power of collective growth and support",
+      "Knowledge-sharing: Open exchange of ideas and learning resources",
+      "Innovation-focused: Encouraging experimentation and creative thinking",
+      "Inclusive and welcoming: Diversity strengthens our community",
+    ],
+  },
+];

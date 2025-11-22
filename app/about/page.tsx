@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { AboutHero } from "@/components/about/about-hero";
+import { MissionVisionValues } from "@/components/about/mission-vision-values";
 
 export const metadata: Metadata = {
   title: "About Us - AI Community Sri Lanka",
@@ -20,6 +21,7 @@ export default function AboutPage() {
       <Navbar />
       <main className="pt-16">
         <AboutHero />
+        <MissionVisionValues />
       </main>
       <Footer />
     </div>
