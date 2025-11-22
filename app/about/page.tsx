@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
-import { metadataAbout } from "../../lib/metadata";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { AboutHero } from "@/components/about/about-hero";
 
-export const metadata: Metadata = metadataAbout;
+export const metadata: Metadata = {
+  title: "About Us - AI Community Sri Lanka",
+  description:
+    "Learn about AI Community Sri Lanka, our mission, vision, team members, and our journey to build the vibrant AI ecosystem in Sri Lanka.",
+  openGraph: {
+    title: "About Us - AI Community Sri Lanka",
+    description:
+      "Learn about our mission, vision, and the team behind AI Community Sri Lanka.",
+  },
+};
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex justify-center">
-          <h1 className="text-center text-4xl sm:text-5xl font-extrabold">
-            About
-          </h1>
-        </div>
+        <AboutHero />
       </main>
       <Footer />
     </div>
