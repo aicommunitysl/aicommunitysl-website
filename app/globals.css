@@ -3,76 +3,76 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Light mode - Professional blue with clean neutrals */
+  /* Light mode - Clean Modern Blue */
   --background: hsl(0 0% 100%);
-  --foreground: hsl(220 13% 13%);
+  --foreground: hsl(222 47% 11%);
   --card: hsl(0 0% 100%);
-  --card-foreground: hsl(220 13% 13%);
+  --card-foreground: hsl(222 47% 11%);
   --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(220 13% 13%);
+  --popover-foreground: hsl(222 47% 11%);
   --primary: #0078d4;
   --primary-foreground: hsl(0 0% 100%);
-  --secondary: #0ca5e9;
-  --secondary-foreground: hsl(0 0% 100%);
-  --muted: hsl(220 14% 90%);
-  --muted-foreground: hsl(220 8% 48%);
-  --accent: #0da5a8;
-  --accent-foreground: hsl(0 0% 100%);
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
   --destructive: hsl(0 84.2% 60.2%);
   --destructive-foreground: hsl(0 0% 100%);
-  --border: hsl(220 13% 91%);
-  --input: rgb(206, 206, 206);
+  --border: #e4e4e7;
+  --input: #e4e4e7;
   --ring: #0078d4;
   --chart-1: #0078d4;
-  --chart-2: #0ca5e9;
-  --chart-3: #0da5a8;
-  --chart-4: #00a4ef;
-  --chart-5: #50d5ff;
+  --chart-2: #17c964;
+  --chart-3: #f5a524;
+  --chart-4: #f31260;
+  --chart-5: #7828c8;
   --radius: 0.625rem;
-  --sidebar: hsl(220 14% 96%);
-  --sidebar-foreground: hsl(220 13% 13%);
+  --sidebar: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
   --sidebar-primary: #0078d4;
-  --sidebar-primary-foreground: hsl(0 0% 100%);
-  --sidebar-accent: #0ca5e9;
-  --sidebar-accent-foreground: hsl(0 0% 100%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
   --sidebar-border: hsl(220 13% 91%);
   --sidebar-ring: #0078d4;
 }
 
 .dark {
-  /* Dark mode - Professional blue on dark background */
-  --background: rgb(0, 0, 0);
-  --foreground: hsl(220 13% 93%);
-  --card: rgb(7, 7, 7);
-  --card-foreground: hsl(220 13% 93%);
-  --popover: hsl(220 13% 13%);
-  --popover-foreground: hsl(220 13% 93%);
-  --primary: #0ca5e9;
-  --primary-foreground: hsl(220 17% 7%);
-  --secondary: #00a4ef;
-  --secondary-foreground: hsl(220 17% 7%);
-  --muted: rgb(31, 31, 31);
-  --muted-foreground: hsl(220 8% 68%);
-  --accent: rgb(4, 145, 163);
-  --accent-foreground: hsl(220 17% 7%);
-  --destructive: hsl(0 84.2% 60.2%);
-  --destructive-foreground: hsl(220 17% 7%);
-  --border: rgb(22, 22, 22);
-  --input: rgb(32, 32, 32);
-  --ring: #0ca5e9;
-  --chart-1: #0ca5e9;
-  --chart-2: #00a4ef;
-  --chart-3: #0da5a8;
-  --chart-4: #50d5ff;
-  --chart-5: #1fb4d9;
-  --sidebar: hsl(220 13% 13%);
-  --sidebar-foreground: hsl(220 13% 93%);
-  --sidebar-primary: #0ca5e9;
-  --sidebar-primary-foreground: hsl(220 17% 7%);
-  --sidebar-accent: #00a4ef;
-  --sidebar-accent-foreground: hsl(220 17% 7%);
-  --sidebar-border: hsl(220 13% 25%);
-  --sidebar-ring: #0ca5e9;
+  /* Dark mode - Deep Blue & Slate */
+  --background: #020617;
+  --foreground: #f8fafc;
+  --card: #0a101d;
+  --card-foreground: #f8fafc;
+  --popover: #0a101d;
+  --popover-foreground: #f8fafc;
+  --primary: #3498db;
+  --primary-foreground: #ffffff;
+  --secondary: #1e293b;
+  --secondary-foreground: #f8fafc;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #1e293b;
+  --accent-foreground: #f8fafc;
+  --destructive: hsl(0 62.8% 30.6%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #3498db;
+  --chart-1: #3498db;
+  --chart-2: #22c55e;
+  --chart-3: #eab308;
+  --chart-4: #ef4444;
+  --chart-5: #a855f7;
+  --sidebar: #0a101d;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #3498db;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1e293b;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: #1e293b;
+  --sidebar-ring: #3498db;
 }
 
 @theme inline {
@@ -151,4 +151,18 @@ html {
 
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out;
+}
+
+/* Scan animation */
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-scan {
+  animation: scan 0.6s ease-out;
 }
