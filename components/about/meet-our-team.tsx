@@ -5,7 +5,7 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { TEAM_MEMBERS } from "@/lib/constants";
 import Image from "next/image";
 
-export function TeamSection() {
+export function MeetOurTeam() {
   const delayClasses = ["delay-0", "delay-1", "delay-2", "delay-3"];
 
   return (

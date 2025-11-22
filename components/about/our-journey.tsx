@@ -2,7 +2,7 @@
 
 import { MILESTONES } from "@/lib/constants";
 
-export function TimelineSection() {
+export function OurJourney() {
   const delayClasses = ["delay-0", "delay-1", "delay-2", "delay-3", "delay-4"];
 
   return (
