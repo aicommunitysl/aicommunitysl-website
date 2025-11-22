@@ -504,3 +504,36 @@ export const MISSION_VISION_VALUES = [
     ],
   },
 ];
+
+export const MILESTONES = [
+  {
+    year: "2020",
+    title: "Community Founded",
+    description:
+      "A small group of AI enthusiasts came together with a vision to build a thriving AI community in Sri Lanka.",
+  },
+  {
+    year: "2021",
+    title: "First Event Hosted",
+    description:
+      "Organized our first AI workshop with 100+ participants and established university partnerships.",
+  },
+  {
+    year: "2022",
+    title: "Rapid Growth",
+    description:
+      "Community grew to 500+ members, hosted 12+ events, and launched our mentorship program.",
+  },
+  {
+    year: "2023",
+    title: "Regional Impact",
+    description:
+      "Expanded to 1000+ members, collaborated with international AI organizations, and started industry partnerships.",
+  },
+  {
+    year: "2024",
+    title: "Ecosystem Leader",
+    description:
+      "Reached 2000+ community members, hosted 50+ events, and became the go-to hub for AI innovation.",
+  },
+];
