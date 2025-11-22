@@ -1,5 +1,6 @@
 import { Footer } from "@/components/footer";
 import { HeroSection } from "@/components/home/hero-section";
+import { AboutPreview } from "@/components/home/about-preview";
 import { Navbar } from "@/components/navbar";
 
 export const metadata = {
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <main className="pt-16">
         <HeroSection />
+        <AboutPreview />
       </main>
       <Footer />
     </div>
