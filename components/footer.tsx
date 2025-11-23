@@ -20,11 +20,10 @@ export function Footer() {
     Website: FiGlobe,
     Email: FiMail,
     GitHub: FaGithub,
-    LinkedIn: FaLinkedinIn,
-    "Facebook Group": FaFacebookF,
-    "Facebook Page": FaFacebookF,
+    Linkedin: FaLinkedinIn,
+    Facebook: FaFacebookF,
     Instagram: FaInstagram,
-    "X (Twitter)": FaXTwitter,
+    X: FaXTwitter,
     TikTok: SiTiktok,
   };
 
