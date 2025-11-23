@@ -1,4 +1,15 @@
-export const NAVIGATION_ITEMS = [
+import type {
+  NavigationItem,
+  SocialLink,
+  EventExtended,
+  Partner,
+  GlobalAIInfo,
+  MissionVisionValue,
+  Milestone,
+  TeamMemberExtended,
+} from "./types";
+
+export const NAVIGATION_ITEMS: NavigationItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Events", href: "/events" },
@@ -6,7 +17,7 @@ export const NAVIGATION_ITEMS = [
   { label: "Contact", href: "/contact" },
 ];
 
-export const SOCIAL_LINKS = [
+export const SOCIAL_LINKS: SocialLink[] = [
   {
     name: "Website",
     url: "https://aicommunitysl.lk",
@@ -63,7 +74,7 @@ export const SOCIAL_LINKS = [
   },
 ];
 
-export const EVENTS = [
+export const EVENTS: EventExtended[] = [
   {
     id: 1,
     title: "AI Fundamentals Workshop",
@@ -461,13 +472,13 @@ export const EVENTS = [
   },
 ];
 
-export const PARTNERS = [
+export const PARTNERS: Partner[] = [
   { name: "Organization 1", logo: "/placeholder.svg" },
   { name: "Organization 2", logo: "/placeholder.svg" },
   { name: "Organization 3", logo: "/placeholder.svg" },
 ];
 
-export const GLOBAL_AI_INFO = {
+export const GLOBAL_AI_INFO: GlobalAIInfo = {
   name: "Global AI Colombo",
   description:
     "We are proud to be a chapter of the Global AI Community. As part of this international network, we conduct various events including Global AI Bootcamps each year. Our partnership enables us to bring world-class learning opportunities and connect our local community with the global AI movement.",
@@ -475,7 +486,7 @@ export const GLOBAL_AI_INFO = {
   buttonText: "View Chapter",
 };
 
-export const MISSION_VISION_VALUES = [
+export const MISSION_VISION_VALUES: MissionVisionValue[] = [
   {
     title: "Our Mission",
     content: [
@@ -505,7 +516,7 @@ export const MISSION_VISION_VALUES = [
   },
 ];
 
-export const MILESTONES = [
+export const MILESTONES: Milestone[] = [
   {
     year: "2020",
     title: "Community Founded",
@@ -538,7 +549,7 @@ export const MILESTONES = [
   },
 ];
 
-export const TEAM_MEMBERS = [
+export const TEAM_MEMBERS: TeamMemberExtended[] = [
   {
     id: 1,
     name: "Team Member One",
