@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { metadataEventDetails } from "../../../lib/metadata";
 import Link from "next/link";
-import { Calendar, MapPin, Tag, ArrowLeft, Clock } from "lucide-react";
+import {
+  FiCalendar,
+  FiMapPin,
+  FiTag,
+  FiArrowLeft,
+  FiClock,
+} from "react-icons/fi";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -32,7 +38,7 @@ export default async function EventDetailsPage({
             </p>
             <Link href="/events">
               <Button>
-                <ArrowLeft size={18} />
+                <FiArrowLeft size={18} />
                 Back to Events
               </Button>
             </Link>
@@ -65,7 +71,7 @@ export default async function EventDetailsPage({
             {/* Back Button */}
             <Link href="/events" className="inline-block mb-8">
               <Button variant="outline">
-                <ArrowLeft size={18} />
+                <FiArrowLeft size={18} />
                 Back to Events
               </Button>
             </Link>
@@ -74,7 +80,7 @@ export default async function EventDetailsPage({
             <div className="mb-8">
               <div className="flex flex-wrap gap-3 mb-4">
                 <span className="px-4 py-2 rounded-lg bg-primary/10 text-primary font-semibold flex items-center gap-2">
-                  <Tag size={18} />
+                  <FiTag size={18} />
                   {event.category}
                 </span>
                 <span className="px-4 py-2 rounded-lg bg-accent/90 text-muted-foreground font-semibold">
@@ -94,7 +100,7 @@ export default async function EventDetailsPage({
             {/* Event Info Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 p-6 bg-muted/50 rounded-xl border border-border">
               <div className="flex items-start gap-4">
-                <Calendar className="text-primary mt-1 shrink-0" size={24} />
+                <FiCalendar className="text-primary mt-1 shrink-0" size={24} />
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Date</h3>
                   <p className="text-muted-foreground">{event.date}</p>
@@ -102,7 +108,7 @@ export default async function EventDetailsPage({
               </div>
 
               <div className="flex items-start gap-4">
-                <Clock className="text-primary mt-1 shrink-0" size={24} />
+                <FiClock className="text-primary mt-1 shrink-0" size={24} />
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Time</h3>
                   <p className="text-muted-foreground">{event.time ?? "TBA"}</p>
@@ -110,7 +116,7 @@ export default async function EventDetailsPage({
               </div>
 
               <div className="flex items-start gap-4">
-                <MapPin className="text-primary mt-1 shrink-0" size={24} />
+                <FiMapPin className="text-primary mt-1 shrink-0" size={24} />
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">
                     Location

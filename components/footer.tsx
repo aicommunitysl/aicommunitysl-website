@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { Mail, MapPin } from "lucide-react";
+// replaced lucide-react icons with react-icons/fi
 import { SOCIAL_LINKS, NAVIGATION_ITEMS } from "@/lib/constants";
 import Image from "next/image";
 import { IconType } from "react-icons";
-import { FiGlobe, FiMail } from "react-icons/fi";
+import { FiGlobe, FiMail, FiMapPin } from "react-icons/fi";
 import {
   FaFacebookF,
   FaInstagram,
@@ -80,13 +80,13 @@ export function Footer() {
             <h3 className="font-semibold text-foreground mb-4">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-2 text-sm">
-                <Mail size={16} className="text-primary mt-0.5 shrink-0" />
+                <FiMail size={16} className="text-primary mt-0.5 shrink-0" />
                 <span className="text-muted-foreground">
                   {SOCIAL_LINKS.find((link) => link.name === "Email")?.handler}
                 </span>
               </li>
               <li className="flex items-start space-x-2 text-sm">
-                <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
+                <FiMapPin size={16} className="text-primary mt-0.5 shrink-0" />
                 <span className="text-muted-foreground">
                   Colombo, Sri Lanka
                 </span>

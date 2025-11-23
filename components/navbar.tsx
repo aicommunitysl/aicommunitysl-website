@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { FiMenu, FiX, FiMoon, FiSun } from "react-icons/fi";
 import { NAVIGATION_ITEMS } from "@/lib/constants";
 import Image from "next/image";
 
@@ -86,7 +86,7 @@ export function Navbar() {
               className="p-2 hover:bg-muted rounded-lg transition-colors cursor-pointer"
               aria-label="Toggle theme"
             >
-              {isDark ? <Sun size={20} /> : <Moon size={20} />}
+              {isDark ? <FiSun size={20} /> : <FiMoon size={20} />}
             </button>
 
             {/* Mobile Menu Button */}
@@ -95,7 +95,7 @@ export function Navbar() {
               className="md:hidden p-2 hover:bg-muted rounded-lg transition-colors cursor-pointer"
               aria-label="Toggle menu"
             >
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
+              {isOpen ? <FiX size={20} /> : <FiMenu size={20} />}
             </button>
           </div>
         </div>

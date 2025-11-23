@@ -3,13 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
-  Calendar,
-  MapPin,
-  Clock,
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+  FiCalendar,
+  FiMapPin,
+  FiClock,
+  FiArrowRight,
+  FiChevronLeft,
+  FiChevronRight,
+} from "react-icons/fi";
 import { Button, IconCircleButton } from "@/components/ui/button";
 import { EVENTS } from "@/lib/constants";
 import Image from "next/image";
@@ -158,15 +158,15 @@ export function EventsList() {
 
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 pb-6 border-b border-border">
                         <div className="flex items-center gap-2 text-muted-foreground">
-                          <Calendar size={18} />
+                          <FiCalendar size={18} />
                           <span className="font-medium">{event.date}</span>
                         </div>
                         <div className="flex items-center gap-2 text-muted-foreground">
-                          <Clock size={18} />
+                          <FiClock size={18} />
                           <span className="font-medium">{event.time}</span>
                         </div>
                         <div className="flex items-center gap-2 text-muted-foreground">
-                          <MapPin size={18} />
+                          <FiMapPin size={18} />
                           <span className="font-medium">{event.location}</span>
                         </div>
                       </div>
@@ -212,7 +212,7 @@ export function EventsList() {
                             className="hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all cursor-pointer bg-popover"
                           >
                             View Details
-                            <ArrowRight size={16} />
+                            <FiArrowRight size={16} />
                           </Button>
                         </Link>
                         <Link href={event.link}>
@@ -220,7 +220,7 @@ export function EventsList() {
                             {eventType === "upcoming"
                               ? "Register Now"
                               : "View Recording"}
-                            <ArrowRight size={16} />
+                            <FiArrowRight size={16} />
                           </Button>
                         </Link>
                       </div>
@@ -238,7 +238,7 @@ export function EventsList() {
                     }
                     disabled={currentPage === 1}
                   >
-                    <ChevronLeft size={20} />
+                    <FiChevronLeft size={20} />
                   </IconCircleButton>
 
                   {/* Page Numbers */}
@@ -267,7 +267,7 @@ export function EventsList() {
                     }
                     disabled={currentPage === totalPages}
                   >
-                    <ChevronRight size={20} />
+                    <FiChevronRight size={20} />
                   </IconCircleButton>
                 </div>
               )}

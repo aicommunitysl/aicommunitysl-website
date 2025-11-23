@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mic, Users, Award, Mail } from "lucide-react";
+import { FiMic, FiUsers, FiAward, FiMail } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
 
 export function CallForSpeakers() {
@@ -10,7 +10,7 @@ export function CallForSpeakers() {
       <div className="max-w-4xl mx-auto text-center space-y-12 animate-fade-in">
         <div className="space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20">
-            <Mic size={16} />
+            <FiMic size={16} />
             <span className="text-sm font-semibold">Call for Speakers</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold leading-tight text-balance">
@@ -28,7 +28,7 @@ export function CallForSpeakers() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
           <div className="p-6 rounded-lg bg-card border border-border space-y-3">
             <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto">
-              <Users size={24} className="text-primary" />
+              <FiUsers size={24} className="text-primary" />
             </div>
             <h3 className="font-semibold text-foreground">Reach Audience</h3>
             <p className="text-sm text-muted-foreground">
@@ -38,7 +38,7 @@ export function CallForSpeakers() {
 
           <div className="p-6 rounded-lg bg-card border border-border space-y-3">
             <div className="w-12 h-12 rounded-lg bg-accent/90 flex items-center justify-center mx-auto">
-              <Award size={24} className="text-muted-foreground" />
+              <FiAward size={24} className="text-muted-foreground" />
             </div>
             <h3 className="font-semibold text-foreground">
               Build Your Profile
@@ -50,7 +50,7 @@ export function CallForSpeakers() {
 
           <div className="p-6 rounded-lg bg-card border border-border space-y-3">
             <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto">
-              <Mic size={24} className="text-primary" />
+              <FiMic size={24} className="text-primary" />
             </div>
             <h3 className="font-semibold text-foreground">Network</h3>
             <p className="text-sm text-muted-foreground">
@@ -62,7 +62,7 @@ export function CallForSpeakers() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
           <Link href="/contact">
             <Button size="lg" className="px-8 cursor-pointer gap-2">
-              <Mail size={18} />
+              <FiMail size={18} />
               Get in Touch
             </Button>
           </Link>
