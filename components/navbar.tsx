@@ -6,16 +6,11 @@ import { usePathname } from "next/navigation";
 import { FiMenu, FiX, FiMoon, FiSun } from "react-icons/fi";
 import { NAVIGATION_ITEMS } from "@/lib/constants";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(() => {
-    // Initialize state directly from localStorage/DOM
-    if (typeof window !== "undefined") {
-      return document.documentElement.classList.contains("dark");
-    }
-    return false;
-  });
+  const { setTheme, resolvedTheme } = useTheme();
   const pathname = usePathname();
 
   const isActive = (href: string) => {
@@ -26,16 +21,7 @@ export function Navbar() {
   };
 
   const toggleTheme = () => {
-    const html = document.documentElement;
-    if (html.classList.contains("dark")) {
-      html.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDark(false);
-    } else {
-      html.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDark(true);
-    }
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
   return (
@@ -83,10 +69,17 @@ export function Navbar() {
           <div className="flex items-center space-x-4">
             <button
               onClick={toggleTheme}
-              className="p-2 hover:bg-muted rounded-lg transition-colors cursor-pointer"
+              className="p-2 hover:bg-muted rounded-lg transition-colors cursor-pointer relative"
               aria-label="Toggle theme"
             >
-              {isDark ? <FiSun size={20} /> : <FiMoon size={20} />}
+              <FiSun
+                size={20}
+                className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+              />
+              <FiMoon
+                size={20}
+                className="absolute top-2 left-2 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+              />
             </button>
 
             {/* Mobile Menu Button */}
