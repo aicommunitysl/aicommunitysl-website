@@ -57,3 +57,25 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button";
 
 export { Button, buttonVariants };
+
+export type IconCircleButtonProps =
+  React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+const IconCircleButton = React.forwardRef<
+  HTMLButtonElement,
+  IconCircleButtonProps
+>(({ className, ...props }, ref) => {
+  return (
+    <button
+      ref={ref}
+      className={cn(
+        "w-10 h-10 rounded-full flex items-center justify-center border border-border bg-card hover:bg-primary hover:text-primary-foreground hover:border-primary disabled:opacity-50 disabled:cursor-not-allowed transition-all cursor-pointer",
+        className
+      )}
+      {...props}
+    />
+  );
+});
+IconCircleButton.displayName = "IconCircleButton";
+
+export { IconCircleButton };
