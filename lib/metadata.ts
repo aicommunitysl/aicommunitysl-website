@@ -1,5 +1,16 @@
 import type { Metadata } from "next";
 
+export const metadataHome: Metadata = {
+  title: "AI Community Sri Lanka",
+  description:
+    "Welcome to AI Community Sri Lanka, your hub for AI enthusiasts, researchers, and developers. Join us to explore the latest in AI technology, attend events, and connect with the community.",
+  openGraph: {
+    title: "AI Community Sri Lanka",
+    description:
+      "Join AI Community Sri Lanka to explore the latest in AI technology, attend events, and connect with fellow enthusiasts.",
+  },
+};
+
 export const metadataAbout: Metadata = {
   title: "About Us - AI Community Sri Lanka",
   description:
