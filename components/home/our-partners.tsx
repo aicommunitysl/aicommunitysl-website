@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { PARTNERS, GLOBAL_AI_INFO } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { FiExternalLink as ExternalLink } from "react-icons/fi";
 import Image from "next/image";
 
 export function OurPartners() {

@@ -104,7 +104,8 @@ export function Footer() {
                     link.name
                   )
               ).map((link) => {
-                const Icon = ICON_MAP[link.icon] || ICON_MAP[link.name];
+                const key = link.icon ?? link.name;
+                const Icon = ICON_MAP[key];
                 return (
                   <a
                     key={link.name}
@@ -114,7 +115,13 @@ export function Footer() {
                     className="w-10 h-10 rounded-lg bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center text-sm font-semibold text-primary"
                     aria-label={link.name}
                   >
-                    {Icon ? <Icon size={16} /> : link.icon.charAt(0)}
+                    {Icon ? (
+                      <Icon size={16} />
+                    ) : link.icon ? (
+                      link.icon.charAt(0)
+                    ) : (
+                      link.name.charAt(0)
+                    )}
                   </a>
                 );
               })}

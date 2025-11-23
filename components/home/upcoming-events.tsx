@@ -1,7 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Calendar, MapPin } from "lucide-react";
+import {
+  FiArrowRight as ArrowRight,
+  FiCalendar as Calendar,
+  FiMapPin as MapPin,
+} from "react-icons/fi";
 import { Button } from "@/components/ui/button";
 import { EVENTS } from "@/lib/constants";
 import Image from "next/image";

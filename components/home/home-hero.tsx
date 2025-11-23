@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { FiArrowRight as ArrowRight, FiStar as Sparkles } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
 import { HomeHeroVisual } from "./home-hero-visual";
 

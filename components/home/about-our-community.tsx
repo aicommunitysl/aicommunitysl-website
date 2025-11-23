@@ -1,7 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Target, Eye, Heart } from "lucide-react";
+import {
+  FiArrowRight as ArrowRight,
+  FiTarget as Target,
+  FiEye as Eye,
+  FiHeart as Heart,
+} from "react-icons/fi";
 import { Button } from "@/components/ui/button";
 
 export function AboutOurCommunity() {

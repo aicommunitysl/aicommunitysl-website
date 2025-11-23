@@ -1,6 +1,6 @@
 "use client";
 
-import { Target, Eye, Zap } from "lucide-react";
+import { FiTarget as Target, FiEye as Eye, FiZap as Zap } from "react-icons/fi";
 import { MISSION_VISION_VALUES } from "../../lib/constants";
 
 export function MissionVisionValues() {
