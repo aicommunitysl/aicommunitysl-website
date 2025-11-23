@@ -183,3 +183,16 @@ html {
 .animate-scan {
   animation: scan 0.6s ease-out;
 }
+
+/* Shared alert styles (moved from component utilities) */
+.alert-success {
+  background-color: #f0fdf4; /* green-50 */
+  border: 1px solid #bbf7d0; /* green-200 */
+  color: #065f46; /* green-700 */
+}
+
+.dark .alert-success {
+  background-color: rgba(4, 120, 87, 0.12); /* green-900/20 approximation */
+  border-color: #064e3b; /* green-800 */
+  color: #86efac; /* green-400 */
+}
