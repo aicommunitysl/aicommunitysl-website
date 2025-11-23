@@ -77,7 +77,7 @@ export default async function EventDetailsPage({
                   <Tag size={18} />
                   {event.category}
                 </span>
-                <span className="px-4 py-2 rounded-lg bg-accent/95 font-semibold">
+                <span className="px-4 py-2 rounded-lg bg-accent/90 text-muted-foreground font-semibold">
                   {event.isUpcoming ? "Upcoming" : "Past"}
                 </span>
               </div>
