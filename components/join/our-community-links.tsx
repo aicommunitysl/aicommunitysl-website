@@ -51,7 +51,7 @@ export function OurCommunityLinks() {
           >
             <div className="h-full p-6 rounded-lg border border-border bg-card hover:border-primary/50 hover:shadow-md hover:bg-primary/5 transition-all flex flex-col items-center justify-center gap-3 text-center cursor-pointer">
               <div className="text-primary group-hover:scale-110 transition-transform">
-                {iconMap[platform.icon] || <FaGlobe size={24} />}
+                {iconMap[platform.icon ?? "Website"] ?? <FaGlobe size={24} />}
               </div>
               <div>
                 <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">

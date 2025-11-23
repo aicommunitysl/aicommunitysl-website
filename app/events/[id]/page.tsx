@@ -172,12 +172,15 @@ export default async function EventDetailsPage({
                   </h2>
                   <div className="space-y-6">
                     {event.sessions.map((session, idx) => {
-                      const speaker = event.speakers?.find(
-                        (s) =>
+                      const speaker = event.speakers?.find((s) => {
+                        const sessionSpeaker = session.speaker;
+                        if (!sessionSpeaker) return false;
+                        return (
                           s.name.toLowerCase() ===
-                            session.speaker.toLowerCase() ||
-                          session.speaker.includes(s.name)
-                      );
+                            sessionSpeaker.toLowerCase() ||
+                          sessionSpeaker.includes(s.name)
+                        );
+                      });
 
                       return (
                         <div
