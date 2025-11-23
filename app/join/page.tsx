@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { JoinHero } from "@/components/join/join-hero";
 import { OurCommunityLinks } from "@/components/join/our-community-links";
+import { CallForSpeakers } from "@/components/join/call-for-speakers";
 
 export const metadata: Metadata = metadataJoin;
 
@@ -18,6 +19,7 @@ export default function JoinPage() {
             <OurCommunityLinks />
           </div>
         </div>
+        <CallForSpeakers />
       </main>
       <Footer />
     </div>
