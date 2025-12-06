@@ -57,6 +57,17 @@ export const metadataJoin: Metadata = {
   },
 };
 
+export const metadataPrivacyPolicy: Metadata = {
+  title: "Privacy Policy - AI Community Sri Lanka",
+  description:
+    "Read the Privacy Policy of AI Community Sri Lanka to understand how we collect, use, and protect your personal information.",
+  openGraph: {
+    title: "Privacy Policy - AI Community Sri Lanka",
+    description:
+      "Read our Privacy Policy to understand how we handle your data.",
+  },
+};
+
 export const metadataApp: Metadata = {
   title: "AI Community Sri Lanka",
   description:
