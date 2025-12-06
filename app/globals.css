@@ -196,3 +196,53 @@ html {
   border-color: #064e3b; /* green-800 */
   color: #86efac; /* green-400 */
 }
+
+/* 404 Animations */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateZero {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-404-enter {
+  animation: fadeInScale 0.5s ease-out forwards;
+}
+
+.animate-404-zero {
+  display: inline-block;
+  animation: rotateZero 2s ease-in-out infinite;
+}
+
+.animate-404-content {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out 0.2s forwards;
+}
