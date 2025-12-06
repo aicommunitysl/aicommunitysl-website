@@ -68,6 +68,17 @@ export const metadataPrivacyPolicy: Metadata = {
   },
 };
 
+export const metadataTermsOfService: Metadata = {
+  title: "Terms of Service - AI Community Sri Lanka",
+  description:
+    "Read the Terms of Service of AI Community Sri Lanka to understand the rules and regulations for using our website and services.",
+  openGraph: {
+    title: "Terms of Service - AI Community Sri Lanka",
+    description:
+      "Read our Terms of Service to understand the rules for using our platform.",
+  },
+};
+
 export const metadataApp: Metadata = {
   title: "AI Community Sri Lanka",
   description:
