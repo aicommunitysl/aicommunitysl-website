@@ -7,11 +7,21 @@ import {
   FiMapPin as MapPin,
 } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
-import { EVENTS } from "@/lib/constants";
+import { getEvents } from "@/lib/api";
+import { EventExtended } from "@/lib/types";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export function UpcomingEvents() {
-  const upcomingEvents = EVENTS.slice(0, 3);
+  const [upcomingEvents, setUpcomingEvents] = useState<EventExtended[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const events = await getEvents(true, 3);
+      setUpcomingEvents(events);
+    }
+    fetchData();
+  }, []);
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 md:py-28">
@@ -39,7 +49,7 @@ export function UpcomingEvents() {
               className="group rounded-xl border border-border bg-card overflow-hidden hover:border-primary/50 transition-all hover:shadow-lg"
             >
               {/* Event Image */}
-              <div className="h-48 overflow-hidden bg-muted">
+              <Link href={`/events/${event.id}`} className="block h-48 overflow-hidden bg-muted cursor-pointer">
                 <Image
                   src={event.image || "/placeholder.svg"}
                   alt={event.title}
@@ -47,7 +57,7 @@ export function UpcomingEvents() {
                   width={400}
                   height={192}
                 />
-              </div>
+              </Link>
 
               {/* Event Content */}
               <div className="p-6 space-y-4">
@@ -106,7 +116,7 @@ export function UpcomingEvents() {
                 )}
 
                 {/* CTA */}
-                <Link href={event.link}>
+                <Link href={`/events/${event.id}`}>
                   <Button variant="default" className="mt-4">
                     Learn More
                     <ArrowRight size={18} className="ml-2" />

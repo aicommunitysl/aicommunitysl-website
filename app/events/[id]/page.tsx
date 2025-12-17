@@ -11,7 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { EVENTS } from "@/lib/constants";
+import { getEventById, getEvents } from "@/lib/api";
 import Image from "next/image";
 
 export const metadata: Metadata = metadataEventDetails;
@@ -19,10 +19,11 @@ export const metadata: Metadata = metadataEventDetails;
 export default async function EventDetailsPage({
   params,
 }: {
-  params: { id: string } | Promise<{ id: string }>;
+  params: Promise<{ id: string }>;
 }) {
-  const { id } = (await params) as { id: string };
-  const event = EVENTS.find((e) => e.id === Number(id));
+  const { id } = await params;
+  const event = await getEventById(id);
+  const allEvents = await getEvents(false, 3); // Fetch a few events for "More Events"
 
   if (!event) {
     return (
@@ -111,7 +112,7 @@ export default async function EventDetailsPage({
                 <FiClock className="text-primary mt-1 shrink-0" size={24} />
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Time</h3>
-                  <p className="text-muted-foreground">{event.time ?? "TBA"}</p>
+                  <p className="text-muted-foreground">{event.time || "TBA"}</p>
                 </div>
               </div>
 
@@ -249,7 +250,7 @@ export default async function EventDetailsPage({
                 More Events
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {EVENTS.filter((e) => e.id !== event.id)
+                {allEvents.filter((e) => String(e.id) !== String(event.id))
                   .slice(0, 2)
                   .map((relatedEvent) => (
                     <Link

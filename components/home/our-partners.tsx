@@ -1,19 +1,32 @@
 "use client";
 
 import Link from "next/link";
-import { PARTNERS, GLOBAL_AI_INFO } from "@/lib/constants";
+import { GLOBAL_AI_INFO } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { FiExternalLink as ExternalLink } from "react-icons/fi";
 import Image from "next/image";
+import { getPartners } from "@/lib/api";
+import { Partner } from "@/lib/types";
+import { useEffect, useState } from "react";
 
 export function OurPartners() {
+  const [partners, setPartners] = useState<Partner[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getPartners();
+      setPartners(data);
+    }
+    fetchData();
+  },[]);
+
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-card border-t border-border">
       <div className="max-w-7xl mx-auto space-y-16">
         <div>
           <h3 className="font-bold text-center mb-8 text-4xl">Our Partners</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {PARTNERS.map((partner, index) => (
+            {partners.map((partner, index) => (
               <div
                 key={index}
                 className="flex items-center justify-center p-6 rounded-lg border border-border bg-background hover:border-primary/50 transition-colors group"

@@ -66,7 +66,7 @@ export function CallForSpeakers() {
               Get in Touch
             </Button>
           </Link>
-          <Link href="/">
+          <Link href="/contact">
             <Button
               size="lg"
               variant="outline"

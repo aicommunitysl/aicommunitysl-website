@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   FiCalendar,
@@ -11,18 +11,29 @@ import {
   FiChevronRight,
 } from "react-icons/fi";
 import { Button, IconCircleButton } from "@/components/ui/button";
-import { EVENTS } from "@/lib/constants";
+import { getEvents } from "@/lib/api";
+import { EventExtended } from "@/lib/types";
 import Image from "next/image";
 
 export function EventsList() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [eventType, setEventType] = useState<"upcoming" | "past">("upcoming");
   const [currentPage, setCurrentPage] = useState(1);
+  const [allEvents, setAllEvents] = useState<EventExtended[]>([]);
   const eventsPerPage = 3;
 
-  const categories = Array.from(new Set(EVENTS.map((e) => e.category)));
+  useEffect(() => {
+    async function fetchData() {
+      // Fetch all events (limit 100) and let client filter
+      const events = await getEvents(false, 100); 
+      setAllEvents(events);
+    }
+    fetchData();
+  }, []);
 
-  const filteredEvents = EVENTS.filter(
+  const categories = Array.from(new Set(allEvents.map((e) => e.category)));
+
+  const filteredEvents = allEvents.filter(
     (e) => e.isUpcoming === (eventType === "upcoming")
   ).filter((e) => (selectedCategory ? e.category === selectedCategory : true));
 

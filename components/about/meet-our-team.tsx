@@ -2,11 +2,22 @@
 
 import Link from "next/link";
 import { FaLinkedinIn } from "react-icons/fa6";
-import { TEAM_MEMBERS } from "@/lib/constants";
+import { getTeam } from "@/lib/api";
+import { TeamMemberExtended } from "@/lib/types";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export function MeetOurTeam() {
   const delayClasses = ["delay-0", "delay-1", "delay-2", "delay-3"];
+  const [teamMembers, setTeamMembers] = useState<TeamMemberExtended[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getTeam();
+      setTeamMembers(data);
+    }
+    fetchData();
+  }, []);
 
   return (
     <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8">
@@ -21,7 +32,7 @@ export function MeetOurTeam() {
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {TEAM_MEMBERS.map((member, index) => {
+          {teamMembers.map((member, index) => {
             const delayClass = delayClasses[index % delayClasses.length];
             return (
               <div

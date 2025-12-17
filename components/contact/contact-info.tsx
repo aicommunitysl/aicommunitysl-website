@@ -12,9 +12,21 @@ import {
   FaXTwitter,
   FaTiktok,
 } from "react-icons/fa6";
-import { SOCIAL_LINKS } from "@/lib/constants";
+import { getSocialLinks } from "@/lib/api";
+import { SocialLink } from "@/lib/types";
+import { useEffect, useState } from "react";
 
 export function ContactInfo() {
+  const [socialLinks, setSocialLinks] = useState<SocialLink[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getSocialLinks();
+      setSocialLinks(data);
+    }
+    fetchData();
+  }, []);
+
   const contactDetails = [
     {
       icon: Mail,
@@ -67,7 +79,7 @@ export function ContactInfo() {
         {/** Map string keys from `SOCIAL_LINKS` to actual icon components */}
         <div className="mt-2">
           <div className="grid grid-cols-4 sm:grid-cols-6 gap-3">
-            {SOCIAL_LINKS.filter(
+            {socialLinks.filter(
               (p) =>
                 ![
                   "Website",

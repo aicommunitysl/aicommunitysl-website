@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
 // replaced lucide-react icons with react-icons/fi
-import { SOCIAL_LINKS, NAVIGATION_ITEMS } from "@/lib/constants";
+import { NAVIGATION_ITEMS } from "@/lib/constants";
+import { getSocialLinks } from "@/lib/api";
+import { SocialLink } from "@/lib/types";
 import Image from "next/image";
 import { IconType } from "react-icons";
 import { FiGlobe, FiMail, FiMapPin } from "react-icons/fi";
@@ -12,9 +16,19 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 import { SiTiktok } from "react-icons/si";
+import { useEffect, useState } from "react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const [socialLinks, setSocialLinks] = useState<SocialLink[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getSocialLinks();
+      setSocialLinks(data);
+    }
+    fetchData();
+  }, []);
 
   const ICON_MAP: Record<string, IconType> = {
     Website: FiGlobe,
@@ -81,7 +95,7 @@ export function Footer() {
               <li className="flex items-start space-x-2 text-sm">
                 <FiMail size={16} className="text-primary mt-0.5 shrink-0" />
                 <span className="text-muted-foreground">
-                  {SOCIAL_LINKS.find((link) => link.name === "Email")?.handler}
+                  {socialLinks.find((link) => link.name === "Email")?.handler}
                 </span>
               </li>
               <li className="flex items-start space-x-2 text-sm">
@@ -97,7 +111,7 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Follow Us</h3>
             <div className="flex space-x-4">
-              {SOCIAL_LINKS.filter(
+              {socialLinks.filter(
                 (link) =>
                   !["Website", "Email", "Facebook Group", "TikTok"].includes(
                     link.name

@@ -1,5 +1,5 @@
 export interface TeamMember {
-  id: number;
+  id: string | number;
   name: string;
   role: string;
   description: string;
@@ -8,7 +8,7 @@ export interface TeamMember {
 }
 
 export interface Event {
-  id: number;
+  id: string | number;
   title: string;
   date: string;
   location: string;
