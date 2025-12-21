@@ -163,6 +163,7 @@ interface TeamMemberAPI {
   image_url?: string;
   linkedin_url?: string;
   is_speaker?: boolean;
+  is_active?: boolean;
 }
 
 export async function getTeam(): Promise<TeamMemberExtended[]> {
@@ -170,15 +171,18 @@ export async function getTeam(): Promise<TeamMemberExtended[]> {
     const data = await fetchAPI<{ members: TeamMemberAPI[] }>("/team/", {
       cache: "no-store",
     });
-    return data.members.map((m) => ({
-      id: m.id,
-      name: m.name,
-      role: m.role,
-      description: m.bio || "",
-      image: m.image_url || "/placeholder.svg",
-      linkedin: m.linkedin_url || "#",
-      speakers: m.is_speaker,
-    }));
+    // Only include active members
+    return data.members
+      .filter((m) => m.is_active !== false)
+      .map((m) => ({
+        id: m.id,
+        name: m.name,
+        role: m.role,
+        description: m.bio || "",
+        image: m.image_url || "/placeholder.svg",
+        linkedin: m.linkedin_url || "#",
+        speakers: m.is_speaker,
+      }));
   } catch (error) {
     console.error("Failed to fetch team:", error);
     return [];
