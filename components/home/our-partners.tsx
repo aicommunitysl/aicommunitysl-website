@@ -8,6 +8,7 @@ import Image from "next/image";
 import { getPartners } from "@/lib/api";
 import { Partner } from "@/lib/types";
 import { useEffect, useState } from "react";
+import { getValidImageUrl } from "@/lib/utils";
 
 export function OurPartners() {
   const [partners, setPartners] = useState<Partner[]>([]);
@@ -18,7 +19,7 @@ export function OurPartners() {
       setPartners(data);
     }
     fetchData();
-  },[]);
+  }, []);
 
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-card border-t border-border">
@@ -33,7 +34,7 @@ export function OurPartners() {
               >
                 <div className="text-center">
                   <Image
-                    src={partner.logo || "/placeholder.svg"}
+                    src={getValidImageUrl(partner.logo)}
                     alt={partner.name}
                     width={96}
                     height={96}

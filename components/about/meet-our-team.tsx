@@ -6,6 +6,7 @@ import { getTeam } from "@/lib/api";
 import { TeamMemberExtended } from "@/lib/types";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { getValidImageUrl } from "@/lib/utils";
 
 export function MeetOurTeam() {
   const delayClasses = ["delay-0", "delay-1", "delay-2", "delay-3"];
@@ -42,7 +43,7 @@ export function MeetOurTeam() {
                 {/* Profile Image */}
                 <div className="h-64 overflow-hidden bg-linear-to-b from-primary/10 to-accent/10">
                   <Image
-                    src={member.image || "/placeholder.svg"}
+                    src={getValidImageUrl(member.image)}
                     alt={member.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     width={400}

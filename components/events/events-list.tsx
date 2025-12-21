@@ -14,6 +14,7 @@ import { Button, IconCircleButton } from "@/components/ui/button";
 import { getEvents } from "@/lib/api";
 import { EventExtended } from "@/lib/types";
 import Image from "next/image";
+import { getValidImageUrl } from "@/lib/utils";
 
 export function EventsList() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -25,17 +26,28 @@ export function EventsList() {
   useEffect(() => {
     async function fetchData() {
       // Fetch all events (limit 100) and let client filter
-      const events = await getEvents(false, 100); 
+      const events = await getEvents(false, 100);
       setAllEvents(events);
     }
     fetchData();
   }, []);
 
-  const categories = Array.from(new Set(allEvents.map((e) => e.category)));
+  const normalizeCategory = (cat: string) => {
+    if (!cat) return "";
+    return cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase();
+  };
 
-  const filteredEvents = allEvents.filter(
-    (e) => e.isUpcoming === (eventType === "upcoming")
-  ).filter((e) => (selectedCategory ? e.category === selectedCategory : true));
+  const categories = Array.from(
+    new Set(allEvents.map((e) => normalizeCategory(e.category)))
+  );
+
+  const filteredEvents = allEvents
+    .filter((e) => e.isUpcoming === (eventType === "upcoming"))
+    .filter((e) =>
+      selectedCategory
+        ? normalizeCategory(e.category) === selectedCategory
+        : true
+    );
 
   const totalPages = Math.ceil(filteredEvents.length / eventsPerPage);
   const startIndex = (currentPage - 1) * eventsPerPage;
@@ -141,7 +153,7 @@ export function EventsList() {
                     {/* Event Image */}
                     <div className="md:w-1/3 h-64 md:h-auto overflow-hidden bg-linear-to-br from-primary/10 to-accent/10">
                       <Image
-                        src={event.image || "/placeholder.svg"}
+                        src={getValidImageUrl(event.image)}
                         alt={event.title}
                         width={400}
                         height={300}
@@ -154,7 +166,7 @@ export function EventsList() {
                       <div className="space-y-4 mb-6">
                         <div className="flex items-center gap-2 flex-wrap">
                           <span className="px-3 py-1 rounded-md bg-primary/10 text-primary text-sm font-semibold">
-                            {event.category}
+                            {normalizeCategory(event.category)}
                           </span>
                         </div>
 
@@ -194,7 +206,7 @@ export function EventsList() {
                                 className="flex items-center gap-2"
                               >
                                 <Image
-                                  src={speaker.image || "/placeholder.svg"}
+                                  src={getValidImageUrl(speaker.image)}
                                   alt={speaker.name}
                                   width={40}
                                   height={40}

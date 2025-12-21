@@ -13,6 +13,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { getEventById, getEvents } from "@/lib/api";
 import Image from "next/image";
+import { getValidImageUrl } from "@/lib/utils";
 
 export const metadata: Metadata = metadataEventDetails;
 
@@ -57,7 +58,7 @@ export default async function EventDetailsPage({
         {/* Hero Section */}
         <section className="relative h-96 md:h-[500px] overflow-hidden bg-linear-to-br from-primary/20 to-accent/20">
           <Image
-            src={event.image || "/placeholder.svg"}
+            src={getValidImageUrl(event.image)}
             alt={event.title}
             fill
             style={{ objectFit: "cover" }}
@@ -136,7 +137,7 @@ export default async function EventDetailsPage({
                   {event.speakers.map((speaker, idx) => (
                     <div key={idx} className="text-center">
                       <Image
-                        src={speaker.image || "/placeholder.svg"}
+                        src={getValidImageUrl(speaker.image)}
                         alt={speaker.name}
                         width={128}
                         height={128}
@@ -202,7 +203,7 @@ export default async function EventDetailsPage({
                           {speaker ? (
                             <div className="flex items-center gap-4">
                               <Image
-                                src={speaker.image || "/placeholder.svg"}
+                                src={getValidImageUrl(speaker.image)}
                                 alt={speaker.name}
                                 width={128}
                                 height={128}
@@ -250,7 +251,8 @@ export default async function EventDetailsPage({
                 More Events
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {allEvents.filter((e) => String(e.id) !== String(event.id))
+                {allEvents
+                  .filter((e) => String(e.id) !== String(event.id))
                   .slice(0, 2)
                   .map((relatedEvent) => (
                     <Link
@@ -260,7 +262,7 @@ export default async function EventDetailsPage({
                       <div className="group rounded-lg border border-border bg-card hover:border-primary/50 transition-all hover:shadow-lg overflow-hidden">
                         <div className="h-48 overflow-hidden bg-linear-to-br from-primary/10 to-accent/10">
                           <Image
-                            src={relatedEvent.image || "/placeholder.svg"}
+                            src={getValidImageUrl(relatedEvent.image)}
                             alt={relatedEvent.title}
                             width={400}
                             height={300}

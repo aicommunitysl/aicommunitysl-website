@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
         hostname: "i.ibb.co",
       },
       {
+        protocol: "https",
+        hostname: "staicommunityslplatform.blob.core.windows.net",
+      },
+      {
         protocol: "http",
         hostname: "localhost",
       },

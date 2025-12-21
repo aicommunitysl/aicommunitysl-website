@@ -11,6 +11,7 @@ import { getEvents } from "@/lib/api";
 import { EventExtended } from "@/lib/types";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { getValidImageUrl } from "@/lib/utils";
 
 export function UpcomingEvents() {
   const [upcomingEvents, setUpcomingEvents] = useState<EventExtended[]>([]);
@@ -49,9 +50,12 @@ export function UpcomingEvents() {
               className="group rounded-xl border border-border bg-card overflow-hidden hover:border-primary/50 transition-all hover:shadow-lg"
             >
               {/* Event Image */}
-              <Link href={`/events/${event.id}`} className="block h-48 overflow-hidden bg-muted cursor-pointer">
+              <Link
+                href={`/events/${event.id}`}
+                className="block h-48 overflow-hidden bg-muted cursor-pointer"
+              >
                 <Image
-                  src={event.image || "/placeholder.svg"}
+                  src={getValidImageUrl(event.image)}
                   alt={event.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   width={400}
@@ -96,7 +100,7 @@ export function UpcomingEvents() {
                       {event.speakers.slice(0, 3).map((speaker, idx) => (
                         <Image
                           key={idx}
-                          src={speaker.image || "/placeholder.svg"}
+                          src={getValidImageUrl(speaker.image)}
                           alt={speaker.name}
                           title={speaker.name}
                           width={32}
