@@ -4,7 +4,15 @@ export interface TeamMember {
   role: string;
   description: string;
   image: string;
-  linkedin: string;
+  social_links?: {
+    linkedin?: string;
+    twitter?: string;
+    github?: string;
+    website?: string;
+  };
+  team_category: string;
+  is_active: boolean;
+  display_order: number;
 }
 
 export interface Event {

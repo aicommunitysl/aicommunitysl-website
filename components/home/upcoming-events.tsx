@@ -5,13 +5,14 @@ import {
   FiArrowRight as ArrowRight,
   FiCalendar as Calendar,
   FiMapPin as MapPin,
+  FiClock as Clock,
 } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
 import { getEvents } from "@/lib/api";
 import { EventExtended } from "@/lib/types";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { getValidImageUrl } from "@/lib/utils";
+import { getValidImageUrl, capitalize } from "@/lib/utils";
 
 export function UpcomingEvents() {
   const [upcomingEvents, setUpcomingEvents] = useState<EventExtended[]>([]);
@@ -67,7 +68,7 @@ export function UpcomingEvents() {
               <div className="p-6 space-y-4">
                 <div className="flex items-center gap-2">
                   <span className="px-2 py-1 rounded-md bg-primary/10 text-primary text-xs font-semibold">
-                    {event.category}
+                    {capitalize(event.category)}
                   </span>
                 </div>
 
@@ -85,6 +86,12 @@ export function UpcomingEvents() {
                     <Calendar size={16} />
                     <span>{event.date}</span>
                   </div>
+                  {event.time && (
+                    <div className="flex items-center gap-2">
+                      <Clock size={16} />
+                      <span>{event.time}</span>
+                    </div>
+                  )}
                   <div className="flex items-center gap-2">
                     <MapPin size={16} />
                     <span>{event.location}</span>

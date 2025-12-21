@@ -161,9 +161,16 @@ interface TeamMemberAPI {
   role: string;
   bio?: string;
   image_url?: string;
-  linkedin_url?: string;
+  social_links?: {
+    linkedin?: string;
+    twitter?: string;
+    github?: string;
+    website?: string;
+  };
   is_speaker?: boolean;
   is_active?: boolean;
+  team_category?: string;
+  display_order?: number;
 }
 
 export async function getTeam(): Promise<TeamMemberExtended[]> {
@@ -180,7 +187,10 @@ export async function getTeam(): Promise<TeamMemberExtended[]> {
         role: m.role,
         description: m.bio || "",
         image: m.image_url || "/placeholder.svg",
-        linkedin: m.linkedin_url || "#",
+        social_links: m.social_links,
+        team_category: m.team_category || "General",
+        is_active: m.is_active !== false,
+        display_order: m.display_order || 0,
         speakers: m.is_speaker,
       }));
   } catch (error) {

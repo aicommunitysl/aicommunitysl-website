@@ -13,7 +13,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { getEventById, getEvents } from "@/lib/api";
 import Image from "next/image";
-import { getValidImageUrl } from "@/lib/utils";
+import { getValidImageUrl, capitalize } from "@/lib/utils";
 
 export const metadata: Metadata = metadataEventDetails;
 
@@ -83,7 +83,7 @@ export default async function EventDetailsPage({
               <div className="flex flex-wrap gap-3 mb-4">
                 <span className="px-4 py-2 rounded-lg bg-primary/10 text-primary font-semibold flex items-center gap-2">
                   <FiTag size={18} />
-                  {event.category}
+                  {capitalize(event.category)}
                 </span>
                 <span className="px-4 py-2 rounded-lg bg-accent/90 text-muted-foreground font-semibold">
                   {event.isUpcoming ? "Upcoming" : "Past"}
