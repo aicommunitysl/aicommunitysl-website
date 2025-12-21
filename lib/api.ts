@@ -6,6 +6,7 @@ import {
   SocialLink,
   Session,
 } from "./types";
+import { formatEventDate, formatEventTime } from "./utils";
 
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1";
@@ -59,18 +60,8 @@ export async function getEvents(
     return data.events.map((event) => ({
       id: event.id,
       title: event.title,
-      date: new Date(event.date).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      }),
-      time:
-        event.time ||
-        new Date(event.date).toLocaleTimeString("en-US", {
-          hour: "numeric",
-          minute: "2-digit",
-          hour12: true,
-        }),
+      date: formatEventDate(event.date),
+      time: event.time || formatEventTime(event.date),
       location: event.location,
       description: event.description || "",
       image: event.image_url || "/placeholder.svg", // Fallback image
@@ -101,18 +92,8 @@ export async function getEventById(id: string): Promise<EventExtended | null> {
     return {
       id: data.id,
       title: data.title,
-      date: new Date(data.date).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      }),
-      time:
-        data.time ||
-        new Date(data.date).toLocaleTimeString("en-US", {
-          hour: "numeric",
-          minute: "2-digit",
-          hour12: true,
-        }),
+      date: formatEventDate(data.date),
+      time: data.time || formatEventTime(data.date),
       location: data.location,
       description: data.description || "",
       image: data.image_url || "/placeholder.svg",
