@@ -230,3 +230,24 @@ export async function getSocialLinks(): Promise<SocialLink[]> {
     return [];
   }
 }
+
+// Contact
+export interface ContactSubmission {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+export interface ContactResponse {
+  id: string;
+}
+
+export async function sendContactForm(
+  data: ContactSubmission
+): Promise<ContactResponse> {
+  return fetchAPI<ContactResponse>("/contact/", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+}

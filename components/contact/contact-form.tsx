@@ -5,20 +5,36 @@ import type React from "react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FiLoader } from "react-icons/fi";
+import { sendContactForm } from "@/lib/api";
 
 export function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setLoading(false);
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      subject: formData.get("subject") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      await sendContactForm(data);
       setSubmitted(true);
+      (e.target as HTMLFormElement).reset();
       setTimeout(() => setSubmitted(false), 5000);
-    }, 1500);
+    } catch (err: any) {
+      setError(err.message || "Failed to send message.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -30,6 +46,12 @@ export function ContactForm() {
       {submitted && (
         <div className="mb-6 p-4 rounded-lg alert-success">
           Thank you for your message! We&apos;ll get back to you soon.
+        </div>
+      )}
+
+      {error && (
+        <div className="mb-6 p-4 rounded-lg bg-destructive/10 text-destructive">
+          {error}
         </div>
       )}
 
