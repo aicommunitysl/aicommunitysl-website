@@ -30,9 +30,10 @@ export function HomeHero() {
             </h1>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Join thousands of AI enthusiasts, researchers, developers, and
-              students. Explore cutting-edge AI technologies, attend workshops,
-              network with experts, and shape the future of AI in Sri Lanka.
+              Join a growing network of students, researchers, founders, and
+              engineers exploring practical AI together. Discover events,
+              workshops, collaborations, and the people moving the local AI
+              ecosystem forward.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -57,17 +58,15 @@ export function HomeHero() {
             <div className="grid grid-cols-3 gap-4 pt-8">
               <div>
                 <p className="text-2xl font-bold text-primary">2000+</p>
-                <p className="text-sm text-muted-foreground">
-                  Community Members
-                </p>
+                <p className="text-sm text-muted-foreground">Community Members</p>
               </div>
               <div>
                 <p className="text-2xl font-bold text-primary">50+</p>
-                <p className="text-sm text-muted-foreground">Events Hosted</p>
+                <p className="text-sm text-muted-foreground">Sessions And Meetups</p>
               </div>
               <div>
                 <p className="text-2xl font-bold text-primary">25+</p>
-                <p className="text-sm text-muted-foreground">Partners</p>
+                <p className="text-sm text-muted-foreground">Partners And Collaborators</p>
               </div>
             </div>
           </div>

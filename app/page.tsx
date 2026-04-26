@@ -3,6 +3,7 @@ import { metadataHome } from "../lib/metadata";
 import { Footer } from "@/components/footer";
 import { HomeHero } from "@/components/home/home-hero";
 import { AboutOurCommunity } from "@/components/home/about-our-community";
+import { CommunityPulse } from "@/components/home/community-pulse";
 import { UpcomingEvents } from "@/components/home/upcoming-events";
 import { OurPartners } from "@/components/home/our-partners";
 import { Navbar } from "@/components/navbar";
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <main className="pt-16">
         <HomeHero />
+        <CommunityPulse />
         <AboutOurCommunity />
         <UpcomingEvents />
         <OurPartners />
