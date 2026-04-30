@@ -60,7 +60,11 @@ export function CallForSpeakers() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-          <Link href="https://forms.gle/PuSxxZSejVrrvzNf9" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://forms.gle/PuSxxZSejVrrvzNf9"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button size="lg" className="px-8 cursor-pointer gap-2">
               <FiMic size={18} />
               Apply to Speak
