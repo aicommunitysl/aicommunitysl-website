@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
         hostname: "staicommunityslplatform.blob.core.windows.net",
       },
       {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+      {
         protocol: "http",
         hostname: "localhost",
       },
