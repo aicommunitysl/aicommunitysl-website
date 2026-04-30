@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FiMic, FiUsers, FiAward, FiMail } from "react-icons/fi";
+import { FiMic, FiUsers, FiAward } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
 
 export function CallForSpeakers() {
@@ -60,10 +60,10 @@ export function CallForSpeakers() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-          <Link href="/contact">
+          <Link href="https://forms.gle/PuSxxZSejVrrvzNf9" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="px-8 cursor-pointer gap-2">
-              <FiMail size={18} />
-              Get in Touch
+              <FiMic size={18} />
+              Apply to Speak
             </Button>
           </Link>
           <Link href="/contact">
@@ -72,7 +72,7 @@ export function CallForSpeakers() {
               variant="outline"
               className="px-8 bg-transparent cursor-pointer"
             >
-              Learn More
+              Get in Touch
             </Button>
           </Link>
         </div>
