@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Team Member One - 001",
+    "role": "Orgnizing Comitte Member",
+    "bio": "AI Engineer",
+    "image_url": "https://res.cloudinary.com/dd0f5yj3g/image/upload/v1777575599/aicommunitysl/team/c0dh4ghls9yklg57aheg.jpg",
+    "email": "",
+    "social_links": {
+      "linkedin": "https://linkedin.com/in/dileepadev",
+      "twitter": null,
+      "github": null,
+      "website": null
+    },
+    "team_category": "core",
+    "is_active": true,
+    "display_order": 1,
+    "id": "6942cbac1012f62843f78b7b",
+    "created_at": "2025-12-17T15:26:36.146000",
+    "updated_at": "2026-05-05T18:59:48.012000"
+  },
+  {
+    "name": "Team Member Two",
+    "role": "Events Coordinator",
+    "bio": "Passionate about community building",
+    "image_url": "https://i.ibb.co/vCCp9vWQ/placeholder.jpg",
+    "email": null,
+    "social_links": {
+      "linkedin": "https://linkedin.com",
+      "twitter": null,
+      "github": null,
+      "website": null
+    },
+    "team_category": "core",
+    "is_active": true,
+    "display_order": 2,
+    "id": "6942cbae1012f62843f78b7c",
+    "created_at": "2025-12-17T15:26:38.382000",
+    "updated_at": "2025-12-17T15:26:38.382000"
+  },
+  {
+    "name": "Team Member Three",
+    "role": "Technical Lead",
+    "bio": "Machine Learning Engineer",
+    "image_url": "https://i.ibb.co/vCCp9vWQ/placeholder.jpg",
+    "email": null,
+    "social_links": {
+      "linkedin": "https://linkedin.com",
+      "twitter": null,
+      "github": null,
+      "website": null
+    },
+    "team_category": "leadership",
+    "is_active": true,
+    "display_order": 3,
+    "id": "6942cbb01012f62843f78b7d",
+    "created_at": "2025-12-17T15:26:40.642000",
+    "updated_at": "2025-12-17T15:26:40.642000"
+  },
+  {
+    "name": "Team Member Four",
+    "role": "Content Lead",
+    "bio": "Tech writer and educator",
+    "image_url": "https://i.ibb.co/vCCp9vWQ/placeholder.jpg",
+    "email": null,
+    "social_links": {
+      "linkedin": "https://linkedin.com",
+      "twitter": null,
+      "github": null,
+      "website": null
+    },
+    "team_category": "leadership",
+    "is_active": true,
+    "display_order": 4,
+    "id": "6942cbb21012f62843f78b7e",
+    "created_at": "2025-12-17T15:26:42.888000",
+    "updated_at": "2025-12-17T15:26:42.888000"
+  }
+]

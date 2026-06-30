@@ -3,8 +3,7 @@
 import Link from "next/link";
 // replaced lucide-react icons with react-icons/fi
 import { NAVIGATION_ITEMS } from "@/lib/constants";
-import { getSocialLinks } from "@/lib/api";
-import { SocialLink } from "@/lib/types";
+import { getSocialLinks } from "@/lib/data";
 import Image from "next/image";
 import { IconType } from "react-icons";
 import { FiGlobe, FiMail, FiMapPin } from "react-icons/fi";
@@ -16,19 +15,10 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 import { SiTiktok } from "react-icons/si";
-import { useEffect, useState } from "react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  const [socialLinks, setSocialLinks] = useState<SocialLink[]>([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getSocialLinks();
-      setSocialLinks(data);
-    }
-    fetchData();
-  }, []);
+  const socialLinks = getSocialLinks();
 
   const ICON_MAP: Record<string, IconType> = {
     Website: FiGlobe,

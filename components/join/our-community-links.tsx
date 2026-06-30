@@ -13,10 +13,7 @@ import {
   FaGlobe,
   FaEnvelope,
 } from "react-icons/fa6";
-import { SOCIAL_LINKS } from "@/lib/constants";
-import { getSocialLinks } from "@/lib/api";
-import { SocialLink } from "@/lib/types";
-import { useEffect, useState } from "react";
+import { getSocialLinks } from "@/lib/data";
 
 const iconMap: Record<string, React.ReactNode> = {
   Website: <FaGlobe size={24} />,
@@ -30,15 +27,7 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export function OurCommunityLinks() {
-  const [socialLinks, setSocialLinks] = useState<SocialLink[]>([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getSocialLinks();
-      setSocialLinks(data);
-    }
-    fetchData();
-  }, []);
+  const socialLinks = getSocialLinks();
 
   return (
     <div className="space-y-8 animate-fade-in delay-1">

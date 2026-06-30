@@ -70,7 +70,7 @@ export function CallForSpeakers() {
               Apply to Speak
             </Button>
           </Link>
-          <Link href="/contact">
+          <Link href="/join">
             <Button
               size="lg"
               variant="outline"
@@ -82,7 +82,7 @@ export function CallForSpeakers() {
         </div>
 
         <p className="text-muted-foreground text-base">
-          Questions? Contact us or reach out through any of our social
+          Questions? Reach out through any of our social
           platforms.
         </p>
       </div>

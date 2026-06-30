@@ -1,24 +1,12 @@
-"use client";
-
 import Link from "next/link";
 import { FaLinkedinIn } from "react-icons/fa6";
-import { getTeam } from "@/lib/api";
-import { TeamMemberExtended } from "@/lib/types";
+import { getTeam } from "@/lib/data";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { getValidImageUrl } from "@/lib/utils";
 
 export function MeetOurTeam() {
   const delayClasses = ["delay-0", "delay-1", "delay-2", "delay-3"];
-  const [teamMembers, setTeamMembers] = useState<TeamMemberExtended[]>([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getTeam();
-      setTeamMembers(data);
-    }
-    fetchData();
-  }, []);
+  const teamMembers = getTeam();
 
   return (
     <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8">

@@ -22,16 +22,6 @@ export const metadataAbout: Metadata = {
   },
 };
 
-export const metadataContact: Metadata = {
-  title: "Contact Us - AI Community Sri Lanka",
-  description:
-    "Get in touch with AI Community Sri Lanka. Contact us for questions, partnership opportunities, or event inquiries.",
-  openGraph: {
-    title: "Contact Us - AI Community Sri Lanka",
-    description: "Get in touch with our community.",
-  },
-};
-
 export const metadataEvents: Metadata = {
   title: "Events - AI Community Sri Lanka",
   description:

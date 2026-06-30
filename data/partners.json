@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Microsoft Sri Lanka",
+    "logo_url": "/placeholder.svg",
+    "display_order": 1
+  },
+  {
+    "name": "IIT Sri Lanka",
+    "logo_url": "/placeholder.svg",
+    "display_order": 2
+  },
+  {
+    "name": "Microsoft Student Ambassadors",
+    "logo_url": "/placeholder.svg",
+    "display_order": 3
+  }
+]

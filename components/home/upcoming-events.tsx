@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import {
   FiArrowRight as ArrowRight,
@@ -8,22 +6,16 @@ import {
   FiClock as Clock,
 } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
-import { getEvents } from "@/lib/api";
-import { EventExtended } from "@/lib/types";
+import { getEvents } from "@/lib/data";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { getValidImageUrl, capitalize } from "@/lib/utils";
 
 export function UpcomingEvents() {
-  const [upcomingEvents, setUpcomingEvents] = useState<EventExtended[]>([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const events = await getEvents(true, 3);
-      setUpcomingEvents(events);
-    }
-    fetchData();
-  }, []);
+  const upcomingEvents = getEvents(true, 3);
+  const fallbackEvents = getEvents(false, 3);
+  const displayedEvents =
+    upcomingEvents.length > 0 ? upcomingEvents : fallbackEvents;
+  const hasUpcoming = upcomingEvents.length > 0;
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 md:py-28">
@@ -32,7 +24,9 @@ export function UpcomingEvents() {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold">Upcoming Events</h2>
             <p className="text-muted-foreground mt-2">
-              Join us for workshops, meetups, and conferences
+              {hasUpcoming
+                ? "Join us for workshops, meetups, and conferences"
+                : "No upcoming events right now. Explore our latest events."}
             </p>
           </div>
           <Link href="/events">
@@ -45,7 +39,7 @@ export function UpcomingEvents() {
 
         {/* Events Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {upcomingEvents.map((event) => (
+          {displayedEvents.map((event) => (
             <div
               key={event.id}
               className="group rounded-xl border border-border bg-card overflow-hidden hover:border-primary/50 transition-all hover:shadow-lg"

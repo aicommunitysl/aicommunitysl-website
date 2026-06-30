@@ -1,25 +1,13 @@
-"use client";
-
 import Link from "next/link";
 import { GLOBAL_AI_INFO } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { FiExternalLink as ExternalLink } from "react-icons/fi";
 import Image from "next/image";
-import { getPartners } from "@/lib/api";
-import { Partner } from "@/lib/types";
-import { useEffect, useState } from "react";
+import { getPartners } from "@/lib/data";
 import { getValidImageUrl } from "@/lib/utils";
 
 export function OurPartners() {
-  const [partners, setPartners] = useState<Partner[]>([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getPartners();
-      setPartners(data);
-    }
-    fetchData();
-  }, []);
+  const partners = getPartners();
 
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-card border-t border-border">

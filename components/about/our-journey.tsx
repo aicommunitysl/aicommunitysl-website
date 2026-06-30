@@ -1,23 +1,8 @@
-"use client";
-
-import { getMilestones } from "@/lib/api";
-import { Milestone } from "@/lib/types";
-import { useEffect, useState } from "react";
+import { getMilestones } from "@/lib/data";
 
 export function OurJourney() {
   const delayClasses = ["delay-0", "delay-1", "delay-2", "delay-3", "delay-4"];
-  const [milestones, setMilestones] = useState<Milestone[]>([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getMilestones();
-      // sort by year ascending or descending as needed. Code assumes order.
-      // API returns sorted? api.ts doesn't sort. API endpoint sorts by display_order? 
-      // check api/v1/endpoints/milestones.py if needed, but for now just set data.
-      setMilestones(data);
-    }
-    fetchData();
-  }, []);
+  const milestones = getMilestones();
 
   return (
     <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-card border-y border-border">

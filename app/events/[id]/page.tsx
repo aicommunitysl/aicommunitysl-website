@@ -11,7 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { getEventById, getEvents } from "@/lib/api";
+import { getEventById, getEvents } from "@/lib/data";
 import Image from "next/image";
 import { getValidImageUrl, capitalize } from "@/lib/utils";
 
@@ -23,8 +23,8 @@ export default async function EventDetailsPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const event = await getEventById(id);
-  const allEvents = await getEvents(false, 3); // Fetch a few events for "More Events"
+  const event = getEventById(id);
+  const allEvents = getEvents(false, 3);
 
   if (!event) {
     return (
@@ -237,7 +237,7 @@ export default async function EventDetailsPage({
                     {event.isUpcoming ? "Register Now" : "View Recording"}
                   </Button>
                 </Link>
-                <Link href="/contact">
+                <Link href="/join">
                   <Button variant="outline" size="lg">
                     Have Questions?
                   </Button>
