@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Ecosystem Leader",
+    "description": "Reached 2000+ community members, hosted 50+ events, and became the go-to hub for AI innovation.",
+    "date": "1970-01-01T00:33:44",
+    "milestone_type": "general",
+    "image_url": null,
+    "link_url": null,
+    "is_published": true,
+    "id": "6942d2ad934ccfe261fbfa42",
+    "created_at": "2025-12-17T15:56:29.604000",
+    "updated_at": "2025-12-17T15:56:29.604000"
+  },
+  {
+    "title": "Regional Impact",
+    "description": "Expanded to 1000+ members, collaborated with international AI organizations, and started industry partnerships.",
+    "date": "1970-01-01T00:33:43",
+    "milestone_type": "general",
+    "image_url": null,
+    "link_url": null,
+    "is_published": true,
+    "id": "6942d2ab934ccfe261fbfa41",
+    "created_at": "2025-12-17T15:56:27.291000",
+    "updated_at": "2025-12-17T15:56:27.291000"
+  },
+  {
+    "title": "Rapid Growth",
+    "description": "Community grew to 500+ members, hosted 12+ events, and launched our mentorship program.",
+    "date": "1970-01-01T00:33:42",
+    "milestone_type": "general",
+    "image_url": null,
+    "link_url": null,
+    "is_published": true,
+    "id": "6942d2a9934ccfe261fbfa40",
+    "created_at": "2025-12-17T15:56:25.024000",
+    "updated_at": "2025-12-17T15:56:25.024000"
+  },
+  {
+    "title": "First Event Hosted",
+    "description": "Organized our first AI workshop with 100+ participants and established university partnerships.",
+    "date": "1970-01-01T00:33:41",
+    "milestone_type": "general",
+    "image_url": null,
+    "link_url": null,
+    "is_published": true,
+    "id": "6942d2a6934ccfe261fbfa3f",
+    "created_at": "2025-12-17T15:56:22.771000",
+    "updated_at": "2025-12-17T15:56:22.771000"
+  },
+  {
+    "title": "Community Founded",
+    "description": "A small group of AI enthusiasts came together with a vision to build a thriving AI community in Sri Lanka.",
+    "date": "1970-01-01T00:33:40",
+    "milestone_type": "general",
+    "image_url": null,
+    "link_url": null,
+    "is_published": true,
+    "id": "6942d2a4934ccfe261fbfa3e",
+    "created_at": "2025-12-17T15:56:20.492000",
+    "updated_at": "2025-12-17T15:56:20.492000"
+  }
+]
